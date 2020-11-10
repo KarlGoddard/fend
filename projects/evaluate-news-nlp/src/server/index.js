@@ -14,6 +14,11 @@ app.use(cors())
 
 console.log(__dirname)
 
+//api parameters
+const mcurl = 'https://api.meaningcloud.com/sentiment-2.1'
+const mckey = `?key=${apikey}&of=json&lang=auto&txt=`
+const mctext = 'text input into html page'
+
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
