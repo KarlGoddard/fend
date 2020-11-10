@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 var path = require('path')
 const mockAPIResponse = require('./mockAPI.js')
 const express = require('express')
@@ -13,6 +16,7 @@ const cors = require('cors')
 app.use(cors())
 
 console.log(__dirname)
+console.log(`Your API key is ${process.env.API_KEY}`);
 
 //api parameters
 const mcurl = 'https://api.meaningcloud.com/sentiment-2.1'
