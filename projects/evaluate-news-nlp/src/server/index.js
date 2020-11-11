@@ -19,11 +19,6 @@ app.use(cors())
 console.log(__dirname)
 console.log(`Your API key is ${process.env.API_KEY}`)
 
-//api parameters
-const mcurl = 'https://api.meaningcloud.com/sentiment-2.1'
-const mckey = `?key=${apikey}&of=json&lang=auto&txt=`
-const mctext = 'text input into html page'
-
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081')
@@ -39,7 +34,7 @@ app.get('/test', function (req, res) {
 })
 
 app.post('/tbc', xxx)
-
+const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=`
 function xxx(req, res) {
     let apicall = mcurl + mckey + mctext
     res.send(apicall)
