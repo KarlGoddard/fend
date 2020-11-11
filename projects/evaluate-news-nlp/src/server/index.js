@@ -33,9 +33,14 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-app.post('/tbc', xxx)
-const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=`
-function xxx(req, res) {
-    let apicall = mcurl + mckey + mctext
-    res.send(apicall)
-}
+app.post('/tbc', async (req, res)=> {
+  const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`;
+  const getinfo = async (apicall) => {
+    try {
+      let data = await.response.json();
+      return data;
+    } catch (error) {
+      console.log("error:" error);
+    }
+  }}
+);
