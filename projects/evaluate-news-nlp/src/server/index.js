@@ -35,12 +35,16 @@ app.get('/test', function (req, res) {
 
 app.post('/tbc', async (req, res)=> {
   const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`;
-  const getinfo = async (apicall) => {
-    try {
-      let data = await response.json();
-      return data;
-    } catch (error) {
-      console.log('error is ' error);
-    }
-  }}
+  getInfo(apicall);
+  res.send(data);
+}
 );
+
+const getinfo = async (apicall) => {
+  try {
+    let data = await response.json();
+    return data;
+  } catch (error) {
+    console.log('error is ', error);
+  }
+}
