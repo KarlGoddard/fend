@@ -1,3 +1,5 @@
+let jsonTest = { 'name':123 }
+
 const dotenv = require('dotenv')
 dotenv.config()
 const apikey = process.env.API_KEY
@@ -33,17 +35,14 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-app.post('/tbc', async (req, res)=> {
-  const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`;
-  getInfo(apicall);
-  res.send(data);
-}
-);
+app.post('/analysis', getInfo)
 
-const getinfo = async (apicall) => {
+const getInfo = async (req, res) => {
+  const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`;
+  const info = await fetch(apicall);
   try {
-    let data = await response.json();
-    return data;
+    let data = await info.json();
+    return jsonTest;
   } catch (error) {
     console.log('error is ', error);
   }

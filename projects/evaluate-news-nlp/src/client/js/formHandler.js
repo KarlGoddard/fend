@@ -17,7 +17,7 @@ function handleSubmit(event) {
         document.getElementById('results').innerHTML = res.message
     })
 
-    fetch('http://localhost:8081/tbc',{
+    fetch('http://localhost:8081/analysis',{
     method: "POST",
     dataType: "TEXT",
     credentials: "same-origin",
