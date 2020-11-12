@@ -29,8 +29,9 @@ function handleSubmit(event) {
       const newData = await response.json();
       return newData;
       console.log('it worked');
-    } catch (error)
-      console.log('it did not work')
+    } catch (error) {
+      console.log('it did not work');
+    }
     //   .then(res => res.json())
     //   .then(function(res) {
     //       document.getElementById('results').innerHTML = 'it worked'
