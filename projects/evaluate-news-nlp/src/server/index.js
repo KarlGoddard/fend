@@ -8,6 +8,8 @@ const dotenv = require('dotenv')
 dotenv.config()
 const apikey = process.env.API_KEY
 
+const fetch = require("node-fetch");
+
 var path = require('path')
 const mockAPIResponse = require('./mockAPI.js')
 const express = require('express')
@@ -42,12 +44,12 @@ app.get('/test', function (req, res) {
 app.post('/analysis', getInfo)
 
 async function getInfo(req, res) {
-  const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`;
-  const info = await fetch(apicall);
-  try {
-    let data = await info.json();
-    res.send(mockAPIResponse)
-  } catch (error) {
+  let apicall = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`);
+
+  if (apicall.ok) {
+    let data = await apicall.json();
+    res.send(mockAPIResponse);
+  } else {
     console.log('error is ', error);
   }
 }
