@@ -1,4 +1,5 @@
 function handleSubmit(event) {
+
     event.preventDefault()
 
     // check what text was put into the form field
@@ -15,11 +16,20 @@ function handleSubmit(event) {
         document.getElementById('results').innerHTML = res.message
     })
 
-    fetch('http://localhost:8081/tbc')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results1').innerHTML = res.message
-    })
+    fetch('http://localhost:8081/tbc',{
+      method: "POST",
+      dataType: "TEXT",
+      credentials: "same-origin",
+      headers: {
+      "Content-Type": "text/plain",
+      },
+      body: formText,
+      })
+      .then(console.log('hello - post worked'))
+    //   .then(res => res.json())
+    //   .then(function(res) {
+    //       document.getElementById('results').innerHTML = 'it worked'
+    // })
 }
 
 export { handleSubmit }
