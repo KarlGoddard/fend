@@ -37,7 +37,7 @@ app.get('/test', function (req, res) {
 
 app.post('/analysis', getInfo)
 
-const getInfo = async (req, res) => {
+async function getInfo(req, res) {
   const apicall = `https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`;
   const info = await fetch(apicall);
   try {
