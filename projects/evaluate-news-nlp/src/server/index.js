@@ -1,4 +1,8 @@
-let jsonTest = { 'name':123 }
+let jsonTest = {
+    'title': 'test json response',
+    'message': 'this is a message',
+    'time': 'now'
+}
 
 const dotenv = require('dotenv')
 dotenv.config()
@@ -42,7 +46,7 @@ async function getInfo(req, res) {
   const info = await fetch(apicall);
   try {
     let data = await info.json();
-    return jsonTest;
+    res.send(mockAPIResponse)
   } catch (error) {
     console.log('error is ', error);
   }
