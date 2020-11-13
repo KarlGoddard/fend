@@ -3,13 +3,9 @@ function handleSubmit(event) {
     event.preventDefault();
 
     // check what text was put into the form field
-    let formText = document.getElementById("txtinput").value;
+    let formText = document.getElementById("urlinput").value;
 
     //Client.checkForName(formText)
-
-    //console.log(formText)
-
-    document.getElementById('results').innerHTML = 'Your input was ' + formText
 
     console.log("::: Form Submitted :::")
 
@@ -29,7 +25,8 @@ function handleSubmit(event) {
   })
     .then((res) => res.json())
     .then(function(res) {
-        document.getElementById('results1').innerHTML = res.status.remaining_credits;
+        document.getElementById('results').innerHTML = 'agreement = ' + res.agreement;
+        document.getElementById('results1').innerHTML = 'subjectivity = ' + res.subjectivity;
   })
 }
 

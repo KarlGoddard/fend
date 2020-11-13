@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 50px;
+  background-color: #e56;
+}
+
+main {
+  height: 200px;
+  background-color: #cc4;
+}
+
+footer {
+  height: 50px;
+  background-color: #af2;
+  }
