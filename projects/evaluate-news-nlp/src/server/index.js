@@ -38,7 +38,7 @@ app.get('/test', function (req, res) {
 app.post('/analysis', getInfo)
 
 async function getInfo(req, res) {
-  let apicall = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&lang=en&txt=${req.body}`);
+  let apicall = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&lang=en&url=${req.body}`);
   if (apicall.ok) {
     let data = await apicall.json();
     res.send(data);
