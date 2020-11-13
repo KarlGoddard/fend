@@ -1,9 +1,3 @@
-let jsonTest = {
-    'title': 'test json response',
-    'message': 'this is a message',
-    'time': 'now'
-}
-
 const dotenv = require('dotenv')
 dotenv.config()
 const apikey = process.env.API_KEY
@@ -19,7 +13,7 @@ app.use(express.static('dist'))
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+app.use(bodyParser.text())
 
 const cors = require('cors')
 app.use(cors())
@@ -44,11 +38,13 @@ app.get('/test', function (req, res) {
 app.post('/analysis', getInfo)
 
 async function getInfo(req, res) {
-  let apicall = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&of=json&lang=auto&txt=${req.body}`);
-
+  let apicall = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${apikey}&lang=en&txt=${req.body}`);
   if (apicall.ok) {
     let data = await apicall.json();
-    res.send(mockAPIResponse);
+    res.send(data);
+    console.log('request is ' + req.body);
+    console.log(data);
+    console.log(apicall);
   } else {
     console.log('error is ', error);
   }

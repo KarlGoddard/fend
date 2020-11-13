@@ -1,34 +1,35 @@
 function handleSubmit(event) {
 
-    event.preventDefault()
+    event.preventDefault();
 
     // check what text was put into the form field
-    let formText = document.getElementById('txt').value
+    let formText = document.getElementById("txtinput").value;
 
-    Client.checkForName(formText)
+    //Client.checkForName(formText)
 
-    //document.getElementById('results').innerHTML = 'Your input was ' + formText
+    //console.log(formText)
+
+    document.getElementById('results').innerHTML = 'Your input was ' + formText
 
     console.log("::: Form Submitted :::")
 
-    fetch('http://localhost:8081/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+    // fetch('http://localhost:8081/test')
+    // .then(res => res.json())
+    // .then(function(res) {
+    //     document.getElementById('results').innerHTML = res.message
+    // })
 
     fetch('http://localhost:8081/analysis',{
     method: "POST",
-    dataType: "TEXT",
-    credentials: "same-origin",
+    credentials: 'same-origin',
     headers: {
-      "Content-Type": "text/plain",
+        'Content-Type': 'text/plain'
     },
-    body: formText,
+    body: formText
   })
-    .then(res => res.json())
-    .then((res) => {
-      console.log(data);
+    .then((res) => res.json())
+    .then(function(res) {
+        document.getElementById('results1').innerHTML = res.status.remaining_credits;
   })
 }
 

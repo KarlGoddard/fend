@@ -24,8 +24,8 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="txt" type="textarea" name="input" value="" onblur="onBlur()" placeholder="Text for analysis">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="txtinput" type="text" name="input" value="" placeholder="Text for analysis">
+                    <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
@@ -47,6 +47,8 @@
                  navigator.serviceWorker.register('/service-worker.js');
              });
          }
+         let formText = document.getElementById('txtinput').value;
+         document.getElementById('results').innerHTML = 'adadsf';
         </script>
     </body>
 </html>
