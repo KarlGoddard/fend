@@ -26,10 +26,10 @@ function handleSubmit(event) {
             document.getElementById('score').innerHTML = res.score_tag;
             document.getElementById('agreement').innerHTML = res.agreement;
             document.getElementById('subjectivity').innerHTML = res.subjectivity;
-            document.getElementById('confidence').innerHTML = res.confidence;
+            document.getElementById('confidence').innerHTML = res.confidence + '%';
             document.getElementById('irony').innerHTML = res.irony;
             document.getElementById('outcome').innerHTML = 'analysis complete';
-            })
+          });
 
     } else {
     document.getElementById('outcome').innerHTML = 'failed, please retry';

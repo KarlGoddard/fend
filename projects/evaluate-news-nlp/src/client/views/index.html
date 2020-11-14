@@ -19,28 +19,28 @@
                     <input id="urlinput" type="text" name="input" value="" placeholder="http://">
                     <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-                <div id="outcome"></div>
+                <div class="outcome"></div>
             </section>
 
             <section>
               <div class="grid-container">
-               <div class="grid-header grid-item">Name</div>
-               <div class="grid-header grid-item">Description</div>
-               <div class="grid-header grid-item">Value</div>
+               <div class="grid-header">Name</div>
+               <div class="grid-header">Description</div>
+               <div class="grid-header">Value</div>
                <div class="grid-item">Score</div>
-               <div class="grid-item">ScoreDesc</div>
+               <div class="grid-item grid-desc">P+/P = Positive</br>NEU = Neutral</br>N/N+ = Negattive</br>NONE = Without Sentiment</div>
                <div id="score" class="grid-item"></div>
                <div class="grid-item">Agreement</div>
-               <div class="grid-item">AgreeDesc</div>
+               <div class="grid-item grid-desc">Agreement between polarity or disagreement between polarity</div>
                <div id="agreement" class="grid-item"></div>
                <div class="grid-item">Subjectivity</div>
-               <div class="grid-item">SubjecteDesc</div>
+               <div class="grid-item grid-desc">Has Subjective or Objective marks</div>
                <div id="subjectivity" class="grid-item"></div>
                <div class="grid-item">Confidence</div>
-               <div class="grid-item">ConfDesc</div>
+               <div class="grid-item grid-desc">Confidence associated with the analsis rated between 0-100</div>
                <div id="confidence" class="grid-item"></div>
                <div class="grid-item">Irony</div>
-               <div class="grid-item">IronyDesc</div>
+               <div class="grid-item grid-desc">Has Ironic marks or Non Ironic</div>
                <div id="irony" class="grid-item"></div>
              </div>
             </section>
