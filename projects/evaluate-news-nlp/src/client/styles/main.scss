@@ -1,6 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -16,4 +17,10 @@ main {
 footer {
   height: 50px;
   background-color: #af2;
+  }
+
+  section {
+      max-width: 800px;
+      margin: 50px auto;
+      border-color: blue;
   }
