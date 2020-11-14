@@ -1,4 +1,4 @@
-import { checkForName } from './js/inputCheck'
+import { inputChecker } from './js/inputCheck'
 import { handleSubmit } from './js/formHandler'
 
 console.log(checkForName);
