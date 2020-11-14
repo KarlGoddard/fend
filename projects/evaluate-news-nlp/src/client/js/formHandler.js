@@ -23,8 +23,11 @@ function handleSubmit(event) {
         })
         .then((res) => res.json())
         .then(function(res) {
-            document.getElementById('results').innerHTML = 'agreement = ' + res.agreement;
-            document.getElementById('results1').innerHTML = 'subjectivity = ' + res.subjectivity;
+            document.getElementById('score').innerHTML = res.score_tag;
+            document.getElementById('agreement').innerHTML = res.agreement;
+            document.getElementById('subjectivity').innerHTML = res.subjectivity;
+            document.getElementById('confidence').innerHTML = res.confidence;
+            document.getElementById('irony').innerHTML = res.irony;
             document.getElementById('outcome').innerHTML = 'analysis complete';
             })
 
