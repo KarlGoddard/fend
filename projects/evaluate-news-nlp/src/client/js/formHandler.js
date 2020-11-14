@@ -5,7 +5,11 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById("urlinput").value;
 
-    Client.inputChecker(formText)
+    if (Client.inputChecker(formText)) {
+      alert(Client.inputChecker(formText));
+    } else {
+      alert('not OK');
+    }
 
     // fetch('http://localhost:8081/test')
     // .then(res => res.json())

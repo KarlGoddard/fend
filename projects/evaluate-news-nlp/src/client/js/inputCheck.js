@@ -1,15 +1,16 @@
 function inputChecker(url) {
     console.log("::: Running check valid input :::", url);
 
-    const regcheck = /http/i;
+    const regcheck = '^(http|https)://';
 
     if(regcheck.test(url)) {
         alert("it passes!");
-        console.log("it passed");
-        console.log(checkurl);
+        return true;
     } else {
-      console.log('else statement');
+      alert("it fails!");
+      return false;
     }
+console.log('result was ' + regcheck.test(url));
 }
 
 export { inputChecker }
