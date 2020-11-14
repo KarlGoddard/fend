@@ -1,15 +1,14 @@
-function inputChecker(x) {
-    console.log("::: Running checkForName :::", x);
-    let names = [
-        "Picard",
-        "Janeway",
-        "Kirk",
-        "Archer",
-        "Georgiou"
-    ]
+function inputChecker(url) {
+    console.log("::: Running check valid input :::", url);
 
-    if(names.includes(x)) {
-        alert("Welcome, Captain!")
+    const regcheck = /http/i;
+
+    if(regcheck.test(url)) {
+        alert("it passes!");
+        console.log("it passed");
+        console.log(checkurl);
+    } else {
+      console.log('else statement');
     }
 }
 
