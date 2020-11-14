@@ -1,4 +1,4 @@
-function inputCheck(x) {
+function inputChecker(x) {
     console.log("::: Running checkForName :::", x);
     let names = [
         "Picard",

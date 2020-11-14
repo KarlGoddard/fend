@@ -5,17 +5,19 @@ body {
 }
 
 header {
-  height: 50px;
+  height: 100px;
   background-color: #e56;
 }
 
 main {
-  height: 200px;
+  height: 500px;
   background-color: #cc4;
+  display: flex;
+  flex-direction: row;
 }
 
 footer {
-  height: 50px;
+  height: 100px;
   background-color: #bbb;
   }
 

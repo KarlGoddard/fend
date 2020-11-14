@@ -5,7 +5,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById("urlinput").value;
 
-    Client.inputCheck(formText)
+    Client.inputChecker(formText)
 
     console.log("::: Form Submitted :::")
 
