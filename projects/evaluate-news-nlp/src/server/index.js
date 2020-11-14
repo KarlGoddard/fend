@@ -31,9 +31,9 @@ app.get('/', function (req, res) {
     //res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+app.get("/test", (req, res) => {
+  res.send(mockAPIResponse);
+});
 
 app.post('/analysis', getInfo)
 
