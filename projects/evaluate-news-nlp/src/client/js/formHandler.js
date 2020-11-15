@@ -18,7 +18,8 @@ function handleSubmit(event) {
         })
         .then((res) => res.json())
         .then(function(res) {
-            document.getElementById('score').innerHTML = res.score_tag;
+            const ScoreVal = ScoreText(res.score_tag);
+            document.getElementById('score').innerHTML = ScoreVal;
             document.getElementById('agreement').innerHTML = res.agreement;
             document.getElementById('subjectivity').innerHTML = res.subjectivity;
             document.getElementById('confidence').innerHTML = res.confidence;
@@ -32,6 +33,14 @@ function handleSubmit(event) {
     return false;
     }
 
+}
+
+function ScoreText(scoreReturn) {
+  if (scoreReturn == 'A') {
+    return '123';
+  } else {
+    return 'abc';
+  }
 }
 
 export { handleSubmit }
