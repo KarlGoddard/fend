@@ -16,10 +16,11 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <p>input your url here:</p>
                     <input id="urlinput" type="text" name="input" value="" placeholder="http://">
                     <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-                <div class="outcome"></div>
+                <div id="outcome"></div>
             </section>
 
             <section>
@@ -37,7 +38,7 @@
                <div class="grid-item grid-desc">Has Subjective or Objective marks</div>
                <div id="subjectivity" class="grid-item"></div>
                <div class="grid-item">Confidence</div>
-               <div class="grid-item grid-desc">Confidence associated with the analsis rated between 0-100</div>
+               <div class="grid-item grid-desc">Confidence associated with the analysis rated between 0-100</div>
                <div id="confidence" class="grid-item"></div>
                <div class="grid-item">Irony</div>
                <div class="grid-item grid-desc">Has Ironic marks or Non Ironic</div>

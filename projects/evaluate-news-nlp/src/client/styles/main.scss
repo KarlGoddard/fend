@@ -10,42 +10,39 @@ main {
   height: 500px;
   display: flex;
   flex-direction: row;
-  border: 4px solid red;
 }
 
 section {
     text-align: center;
     width: 100%;
-    margin: 50px auto;
-    border: 2px solid red;
+    margin: 30px auto;
 }
 
 #outcome {
+    margin: 30px auto;
     font-size: 0.8em;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196F3;
   padding: 10px;
+  font-size: 0.5em;
 }
 
 .grid-header{
-  background-color: #bbb;
+  background-color: #ddd;
   padding: 15px;
-  font-size: 0.8em;
   text-align: center;
   font-weight: bold;
 }
 
 .grid-item {
-  border: 1px solid #888;
+  border: 1px solid #ddd;
   padding: 15px;
-  font-size: 0.6em;
   text-align: left;
 }
 
 .grid-desc {
-  font-size: 0.3em;
+  font-size: 0.8em;
 }
