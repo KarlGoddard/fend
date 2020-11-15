@@ -46,3 +46,4 @@ function ScoreText(scoreReturn) {
 }
 
 export { handleSubmit }
+export { ScoreText }
