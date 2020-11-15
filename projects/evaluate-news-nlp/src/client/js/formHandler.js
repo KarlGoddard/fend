@@ -36,10 +36,12 @@ function handleSubmit(event) {
 }
 
 function ScoreText(scoreReturn) {
-  if (scoreReturn == 'A') {
-    return '123';
+  if (scoreReturn == 'P+' || scoreReturn == 'P') {
+    return 'POSITIVE';
+  } else if (scoreReturn == 'N+' || scoreReturn == 'N') {
+    return 'NEGATIVE';
   } else {
-    return 'abc';
+    return 'NEUTRAL/Non-SENTIMENTAL'
   }
 }
 
